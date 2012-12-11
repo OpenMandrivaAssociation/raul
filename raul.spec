@@ -1,10 +1,10 @@
-%define major 3
+%define major 10
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
 Name:		raul
-Version:	0.6.0
-Release:	%mkrel 2
+Version:	0.8.0
+Release:	2
 Summary:	Realtime Audio Utility Library
 License:	GPLv2+
 Group:		System/Libraries
@@ -45,17 +45,18 @@ This package contains development files for %{name}.
 
 %build
 %setup_compile_flags
-%__waf configure \
+./waf configure \
 	--prefix=%{_prefix} \
 	--datadir=%{_datadir} \
 	--libdir=%{_libdir} \
 	--includedir=%{_includedir}
 
-%__waf build
+./waf build
 
 %install
 rm -rf %{buildroot}
-%waf_install
+./waf install --destdir=%{buildroot}
+chmod 0755 %{buildroot}%{_libdir}/libraul.so.%{major}*
 
 %files -n %{libname}
 %defattr(-,root,root)
@@ -67,3 +68,15 @@ rm -rf %{buildroot}
 %{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 %{_includedir}/%{name}
+
+
+%changelog
+* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 0.6.0-2mdv2011.0
++ Revision: 614701
+- the mass rebuild of 2010.1 packages
+
+* Tue Jan 19 2010 Jérôme Brenier <incubusss@mandriva.org> 0.6.0-1mdv2010.1
++ Revision: 493777
+- import raul
+
+
