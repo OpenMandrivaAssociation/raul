@@ -4,7 +4,7 @@
 
 Name:		raul
 Version:	0.8.0
-Release:	2
+Release:	3
 Summary:	Realtime Audio Utility Library
 License:	GPLv2+
 Group:		System/Libraries
