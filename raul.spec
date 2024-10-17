@@ -8,7 +8,7 @@ Release:	3
 Summary:	Realtime Audio Utility Library
 License:	GPLv2+
 Group:		System/Libraries
-Url:		http://drobilla.net/software/raul/
+Url:		https://drobilla.net/software/raul/
 Source0:	http://download.drobilla.net/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
